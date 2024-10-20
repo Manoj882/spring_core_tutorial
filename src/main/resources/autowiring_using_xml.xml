@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!-- Injecting using Constructor-arg Injection  -->
+
+
+    <bean class="autowiring_using_xml.Address" name="address">
+        <property name="city" value="Kathmandu" />
+        <property name="street" value="Tenzing chowk" />
+    </bean>
+
+    <bean class="autowiring_using_xml.Address" name="address1">
+        <property name="city" value="Kathmandu" />
+        <property name="street" value="Tenzing chowk" />
+    </bean>
+
+    <bean class="autowiring_using_xml.Employee" name="emp1" autowire="byName">
+        <property name="empId" value="101" />
+        <property name="empName" value="Manoj" />
+    </bean>
+
+    <!-- autowire using byTpe creates ambiguity problem if bean of same reference type is create more than one.  -->
+
+<!--    <bean class="autowiring_using_xml.Employee" name="emp2" autowire="byType">-->
+<!--        <property name="empId" value="101" />-->
+<!--        <property name="empName" value="Manoj" />-->
+<!--    </bean>-->
+
+    <bean class="autowiring_using_xml.Employee" name="emp3" autowire="byType">
+        <property name="empId" value="101" />
+        <property name="empName" value="Manoj" />
+        <property name="address" ref="address" />
+    </bean>
+
+
+
+</beans>
