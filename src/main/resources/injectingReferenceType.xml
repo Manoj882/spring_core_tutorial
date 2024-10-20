@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!-- Injecting Reference Type using Setter Injection  -->
+
+    <bean class="injectingReferenceType.Certificate" name="cert1" >
+        <property name="certId" value="201"/>
+        <property name="certName" value ="Java Full Stack Developer" />
+    </bean>
+
+    <bean class="injectingReferenceType.Employee" name ="emp1">
+        <property name="empId" value="101"/>
+        <property name="empName" value="sita" />
+        <property name="cert" ref="cert1" />
+    </bean>
+
+</beans>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!-- Injecting Primitive Datatype using Setter Injection  -->
+
+    <bean class = "org.setterInjection.Student" name = "student1">
+        <property name = "studentId" value = "101" />
+        <property name = "studentName" value  = "Janak"/>
+        <property name = "studentAdd" value ="Kavre" />
+
+    </bean>
+
+    <bean class ="org.setterInjection.Student"  name = "student2">
+        <property name = "studentId">
+            <value>102</value>
+        </property>
+
+        <property name = "studentName">
+            <value>Sita</value>
+        </property>
+
+        <property name="studentAdd">
+            <value>Mithila</value>
+        </property>
+
+    </bean>
+
+</beans>

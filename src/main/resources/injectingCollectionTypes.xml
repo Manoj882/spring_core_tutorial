@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!-- Injecting Collection Datatype using Setter Injection  -->
+
+    <bean class="injectingCollectionTypes.Employee" name="emp1">
+
+        <property name="name" value="ram"/>
+        <property name="phones">
+            <list>
+                <value>98231267891</value>
+                <value>98512345879</value>
+            </list>
+        </property>
+
+        <property name="add">
+            <set>
+                <value>kapan</value>
+                <value>boudha</value>
+                <value>kapan</value>
+            </set>
+        </property>
+
+        <property name="course">
+            <map>
+                <entry key="java" value="5000" />
+                <entry key="python" value="4000" />
+                <entry key="nodejs" value="3000" />
+            </map>
+        </property>
+
+    </bean>
+
+
+
+</beans>

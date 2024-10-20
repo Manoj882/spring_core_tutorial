@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!-- Injecting using Constructor-arg Injection  -->
+
+
+    <bean class ="constructorInjection.Certificate" name="cert1">
+        <constructor-arg name="certId" value="212" />
+        <constructor-arg name="certName" value="MERN Full Stack Developer"/>
+    </bean>
+
+    <bean class="constructorInjection.Person" name="person1">
+        <constructor-arg name="personId" value="101" type="int" />
+        <constructor-arg name="personName" value="Hari"/>
+        <constructor-arg name="phone">
+            <list>
+                <value>98238612358</value>
+                <value>9823451000</value>
+            </list>
+        </constructor-arg>
+
+        <constructor-arg name ="cert" ref="cert1" />
+
+    </bean>
+
+
+
+</beans>
